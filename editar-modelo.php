@@ -13,7 +13,7 @@ $row = $res->fetch_object();
     <input type="hidden" name='id_modelo' value='<?php echo $row->id_modelo; ?>'>
 
     <div class='mb-3'>
-        <label>Nome:</label>
+        <label>Nome do Modelo:</label>
         <input type='text' name='nome_modelo' class='form-control border-success' value='<?php echo $row->nome_modelo; ?>'>
     </div>
 
@@ -34,7 +34,7 @@ $row = $res->fetch_object();
 
     <div class='mb-3'>
         <label>ID da Marca:</label>
-        <input type='number' name='marca_id' class='form-control border-success' value='<?php echo $row->marca_id; ?>'>
+        <input type='number' name='marca_id_marca' class='form-control border-success' value='<?php echo $row->marca_id_marca; ?>'>
     </div>
 
     <div>

@@ -5,13 +5,8 @@
         <input type="hidden" name='acao' value='cadastrar'>
 
         <div class='mb-3'>
-            <label>Nome do Carro:</label>
-            <input type='text' name='nome_carro' class='form-control border-success' required>
-        </div>
-
-        <div class='mb-3'>
-            <label>Modelo:</label>
-            <input type='text' name='modelo_carro' class='form-control border-success' required>
+            <label>Nome do Modelo:</label>
+            <input type='text' name='nome_modelo' class='form-control border-success' required>
         </div>
 
         <div class='mb-3'>
@@ -31,7 +26,7 @@
 
         <div class='mb-3'>
             <label>ID da Marca:</label>
-            <input type='number' name='marca_id' class='form-control border-success'>
+            <input type='number' name='marca_id_marca' class='form-control border-success' required>
         </div>
 
         <div class="text-center">

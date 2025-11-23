@@ -1,14 +1,13 @@
 <?php
 include("config.php");
 
-switch ($_POST["acao"] ?? $_GET["acao"]) {
+switch ($_REQUEST["acao"] ?? '') {
     case "cadastrar":
         $nome = $_POST["nome_marca"];
         $cor = $_POST["cor_carro"];
         $ano = $_POST["ano_carro"];
 
-        $sql = "INSERT INTO marca (nome_marca, cor_carro, ano_carro)
-                VALUES ('$nome', '$cor', '$ano')";
+        $sql = "INSERT INTO marca (nome_marca, cor_carro, ano_carro) VALUES ('$nome', '$cor', '$ano')";
         $res = $conn->query($sql);
 
         if ($res === TRUE) {
@@ -25,11 +24,7 @@ switch ($_POST["acao"] ?? $_GET["acao"]) {
         $cor = $_POST["cor_carro"];
         $ano = $_POST["ano_carro"];
 
-        $sql = "UPDATE marca SET 
-                    nome_marca = '$nome',
-                    cor_carro = '$cor',
-                    ano_carro = '$ano'
-                WHERE id_marca = $id";
+        $sql = "UPDATE marca SET nome_marca = '$nome', cor_carro = '$cor', ano_carro = '$ano' WHERE id_marca = $id";
         $res = $conn->query($sql);
 
         if ($res === TRUE) {
@@ -41,7 +36,7 @@ switch ($_POST["acao"] ?? $_GET["acao"]) {
         break;
 
     case "excluir":
-        $id = $_GET["id_marca"];
+        $id = $_REQUEST["id_marca"];
         $sql = "DELETE FROM marca WHERE id_marca = $id";
         $res = $conn->query($sql);
 

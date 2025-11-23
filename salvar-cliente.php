@@ -1,7 +1,7 @@
 <?php
 include("config.php"); 
 
-switch ($_POST["acao"]) {
+switch ($_REQUEST["acao"] ?? '') {
     case "editar":
         $id = $_POST["id_cliente"];
         $nome = $_POST["nome_cliente"];

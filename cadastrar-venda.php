@@ -5,23 +5,50 @@
         <input type="hidden" name='acao' value='cadastrar'>
 
         <div class='mb-3'>
-            <label>ID do Cliente:</label>
-            <input type='number' name='cliente_id' class='form-control border-success' required>
+            <label>Cliente:</label>
+            <select name='cliente_id_cliente' class='form-control border-success' required>
+                <option value="">Selecione um Cliente</option>
+                <?php
+                $sql = "SELECT * FROM cliente";
+                $res = $conn->query($sql);
+                while ($row = $res->fetch_object()) {
+                    print "<option value='" . $row->id_cliente . "'>" . $row->nome_cliente . "</option>";
+                }
+                ?>
+            </select>
         </div>
 
         <div class='mb-3'>
-            <label>ID do Funcionário:</label>
-            <input type='number' name='funcionario_id' class='form-control border-success' required>
+            <label>Funcionário:</label>
+            <select name='funcionario_id_funcionario' class='form-control border-success' required>
+                <option value="">Selecione um Funcionário</option>
+                <?php
+                $sql = "SELECT * FROM funcionario";
+                $res = $conn->query($sql);
+                while ($row = $res->fetch_object()) {
+                    print "<option value='" . $row->id_funcionario . "'>" . $row->nome_funcionario . "</option>";
+                }
+                ?>
+            </select>
         </div>
 
         <div class='mb-3'>
-            <label>ID do Modelo:</label>
-            <input type='number' name='modelo_id' class='form-control border-success' required>
+            <label>Modelo:</label>
+            <select name='modelo_id_modelo' class='form-control border-success' required>
+                <option value="">Selecione um Modelo</option>
+                <?php
+                $sql = "SELECT * FROM modelo";
+                $res = $conn->query($sql);
+                while ($row = $res->fetch_object()) {
+                    print "<option value='" . $row->id_modelo . "'>" . $row->nome_modelo . "</option>";
+                }
+                ?>
+            </select>
         </div>
 
         <div class='mb-3'>
             <label>Valor da Venda:</label>
-            <input type='number' step='0.01' name='valor_venda' class='form-control border-success' required>
+            <input type='number' step="0.01" name='valor_venda' class='form-control border-success' required>
         </div>
 
         <div class='mb-3'>
